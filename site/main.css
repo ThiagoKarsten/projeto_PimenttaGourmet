@@ -1,0 +1,75 @@
+body{
+    font-family: Roboto, sans-serif;
+}
+
+
+
+.navbar{ /* Aplicando a cor de fundo ao menu */
+    background-color: #DF0712;
+    background-image: linear-gradient(
+        to right,
+        #df07124f 35%,
+        rgba(255, 255, 0, 0.719) 90%
+    );
+}
+
+#cabecalho .nav .nav-link.active{ /* Criando a regra de cor para o link ativo */
+    background-color: #fff;
+    color: black
+}
+
+#cabecalho .nav .nav-link, /* Criando a regra para os demais links */
+.navbar-brand, /* Criando a regra para o h1 tambem */
+.navbar-brand:hover, /* Tirando a mudança de cor ao passar por cima do titulo */
+.nav-cardapio .nav-link.active:hover{ 
+    color: #fff;
+}
+
+.navbar-toggler{ /* Aplicando uma cor ao icone hamburguer */
+    background-color:#ffeae6;
+}
+
+.section-title{
+    font-family: Pacifico, cursive;
+}
+
+#sobre-o-restaurante, /* add essa cor a área sobre o restaurante */
+#cardapio{ /* add essa cor ao cardapio do restaurante */
+    background-color: rgba(255, 255, 0, 0.205)
+}
+
+.text-colored{ /* classe aplicada aos elementos que terão essa cor de texto */
+    color: #df0712;
+}
+
+.nav-cardapio .nav-link.active, /* .nav-link.active: Juntos para selecionar duas classes css */
+#fale-conosco button{  /* Estilizando o botão do formulário */
+    background-color: #e15f41;
+    color: white;
+}
+
+.nav-cardapio .nav-link:hover{
+    color: #e15f41;
+}
+
+.social-links li{ /* editando os li das redes sociais */
+    list-style: none;
+    display: inline; /* li um ao lado do outro */
+}
+
+.social-links a{
+    text-decoration: none; /* Tirando as linhas a baixo dos links */
+}
+
+footer{
+    background-color: black;
+    color: #fff;
+    padding: 6px 0;
+}
+
+@media screen and (max-width: 767px){
+    .carousel-item img{
+        height: 280px;
+    } 
+}
+

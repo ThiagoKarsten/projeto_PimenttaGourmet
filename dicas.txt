@@ -1,0 +1,19 @@
+Baixando as dependencias do less:
+1. Abra o terminal 
+2. Digitar: npm install -g less
+3. Digitar: npm init 
+4. Digitar: npm install --save-dev less
+
+Logo apos isso criamos o gitignore e digitamos no terminal "git init"
+
+Criamos um script do less no package.json:
+1. Digitar dentro do Script "less": "lessc ./src/styles/main.less ./build/styles/main.css"
+2. abrir o terminal 
+3. Executando o script: npm run less
+4. Apos isso sera criado a pasta build com o arquivo "main.css" la dentro
+
+Adicioando o plugin "watch" no less para que ele atulize sozinho a cada modificação
+1. Abrir terminal
+2. Intalando o watch globalmente: "npm i (install) -g (global) less-watch-compiler"
+3. Instalando dentro do projeto: "npm i (install) --save-dev less-watch-compiler"
+4. MUDANDO O SCRIPT: "less": "less-watch-compiler ./src/styles ./build/styles main.less"

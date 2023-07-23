@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+.marginBottom8 {
+  margin-bottom: 8px;
+}
+body {
+  color: #f5f6fa;
+  background-image: linear-gradient(to top left, red 35%, yellow 90%);
+}
+li {
+  list-style: none;
+}
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .container {
+    max-width: 70%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    max-width: 80%;
+  }
+}
+header {
+  padding-bottom: 24px;
+}
+header .profile-avatar {
+  display: block;
+  margin: 0 auto 24px;
+  height: 150px;
+}
+.profile-bio {
+  text-align: center;
+}
+.profile-bio-name {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+.profile-bio-subtitle {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 230px;
+  width: 100%;
+  margin: 0 auto;
+}
+.social-links li img {
+  /* transition: all ease 0.3s; - Deixando o zoom mais suave ao passar o mouse sobre a imagem */
+  transition: all ease 0.4s;
+  height: 30px;
+}
+.social-links li img:hover {
+  /* transform: scale(1.3); - Aplicando um zoom na imagem quando passamos o mouse por cima */
+  transform: scale(1.3);
+}
+.projects-list {
+  margin-top: 32px;
+}
+.projects-list-item a {
+  text-decoration: none;
+  background-color: black;
+  display: block;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #f5f6fa;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 30px;
+  border: 2px solid black;
+  transition: all ease 1s;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.projects-list-item a:hover {
+  background-color: transparent;
+}

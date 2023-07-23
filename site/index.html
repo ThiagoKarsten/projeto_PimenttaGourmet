@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> <!-- Importando o CSS bootstrap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- precisamos add os links das fontes entre o main css e o css bootstrap -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- link das fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- link das fontes -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> <!-- links dos icons em css -->
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+    <!-- class="navbar: criando o cabeçalho com "navbar"
+        class="navbar navbar-expand-lg: quando a tela for de computador o hamburguer não irá aparecer (navbar-expand-lg) 
+        class="navbar navbar-expand-lg stick-top": Fazendo o header acompnhar a pagina na rolagem (sticky-top) 
+        class="p-4": Aumentando o espaçamento interno em todos os lados do cabeçalho (p = padding: ;) 
+        class="pb-4": Aumentando o espaçamento em baixo (pb = padding-bottom: ;)
+        class="pt-4": Aumentando o espaçamento em cima (pt = padding-top: ;)
+        class="ps-4": Aumentando o espaçamento na esquerda, começo do cabeçalho(ps = o "s" é de start)
+        class="pe-4": Aumentando o espaçamento na direita, no fim do cabeçalho (pe = o "e" é de end)-->
+    <header class="navbar navbar-expand-lg sticky-top p-4" id="cabecalho">
+        <div class="container">
+            <!-- class="navbar-brand": aplicando um estilo que o titulo fica menor 
+                class="navbar-brand m-0"> tirando a margem do titulo para que ele fique centralizado-->
+            <h1 class="navbar-brand m-0 section-title fs-3">Pimentta Gourmet</h1>
+            <!-- class="navbar-toggler": Aplicando estilização ao hamburguer no menu 
+                data-bs-toggle="collapse": Atributo para indicar a ação do botão (descer o menu com os links) 
+                data-bs-target="#menu-navegacao": Atributo indicando que quem vai receber a ação do botão é o "id" do "nav"-->
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-navegacao">
+                <span class="navbar-toggler-icon"></span> <!-- Aplicando o icone do hamburguer no menu -->
+            </button>
+            <!-- class="navbar-collapse collapse": fazendo o menu de links desaparcer 
+                class="navbar-collapse collapse justify-content-end": colocandos os links do lado direito da página, ou seja no final dela-->
+            <nav class="navbar-collapse collapse justify-content-end" id="menu-navegacao">
+                <!-- class="nav nav-pills": aplicando uma aparencia de botão nos links e tirando os pontos do li 
+                    class="d-block": Deixando os "li" um a baixo do outro na versão mobile (d-block = display: block;)
+                    class="d-block d-md-flex": (d = display: ;), a partir do breakpoint "md" (se a pagina for media para cima), aplicamos o "flex"(display: flex;), para que os "li" fiquem um ao lado do outro e não um em cima do outro igual na versão mobile-->
+                <ul class="nav nav-pills d-block d-md-flex">
+                    <!-- class="fw-bold": aplicando negrito aos links (fw-bold = font-weight: bold ;) -->
+                    <li class="nav-item fw-bold">
+                        <!-- class="nav-link": add espaçamento aos elementos 
+                            class="nav-link active": indicando qual link esta ativo-->
+                        <a href="#sobre-o-restaurante" class="nav-link" >
+                            <!-- class="bi bi-house-door: Icone de casa ao lado esquerdo da frase (Sobre o restaurante) 
+                                class="bi bi-house-door me-1": aplicando uma margem no icone, para distanciar ele do texto (me= MARGIN-END OU MARGIN-RIGHT) -->
+                            <i class="bi bi-house-door me-1"></i> 
+                            Sobre o Pimentta
+                        </a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                        <a href="#eventos" class="nav-link" >
+                            <!-- class="bi bi-calendar-check: aplicando um icone de calendario -->
+                            <i class="bi bi-calendar-check me-1"></i>
+                            Eventos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#cardapio" class="nav-link fw-bold" >
+                            <!-- class="bi bi-card-text: aplicando um icone de texto -->
+                            <i class="bi bi-card-text me-1"></i>
+                            Nosso cardápio
+                        </a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                        <a href="#fale-conosco" class="nav-link" >
+                            <!-- class="bi bi-chat-left-text: Aplicando um icone de balão de mensagem -->
+                            <i class="bi bi-chat-left-text me-1"></i>
+                            Fale conosco
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- data-bs-spy="scroll" || data-bs-target="cabecalho": atributos para marcar nos "li" o active, para mostrar qual parte do site estamos vendo 
+        data-bs-smooth-scroll="true": FAZENDO AS SEÇOES PARAREM NO LUGAR CERTO SEM TAPAR O TITULO, AO CLICAR NOS LINKS DO CABEÇALHO-->
+    <div data-bs-spy="scroll" data-bs-target="cabecalho" data-bs-smooth-scroll="true">
+        <!-- CRIANDO O CAROUSEL DO RESTAURANTE-->
+        <section id="sobre-o-restaurante">
+        <!-- class="carousel slide": aplicando um carousel de imagens 
+            data-bs-ride="carousel": atributo para fazer o slide passar automaticamente-->
+            <div class="carousel slide" data-bs-ride="carousel" id="carousel">
+                <div class="carousel-inner">
+                <!-- class="carousel-item": os itens que ficarão dentro do carousel 
+                    data-bs-interval="1000": add o tempo que terá cada slide (1 segundo)-->
+                    <div class="carousel-item active" data-bs-interval="1000">
+                    <img src="images/slides/slide1.png" alt="Foto do espaço interno do restaurante">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="images/slides/slide2.png" data-bs-interval="1000" alt="Duas taças de vinho">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="images/slides/slide3.png" data-bs-interval="1000" alt="Uma mesa com comida">
+                    </div>
+                </div>
+            <!-- CRIANDO O BOTÃO DE VOLTAR O CAROUSEL 
+                class="carousel-control-prev-icon": criando o botão de voltar o slide
+                data-bs-target="#carousel": atributo para indicar o elemento que será manipulado 
+                data-bs-slide="prev": atributo para indicar para qual slide ele deve levar o elemento de "id=carousel"-->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <!-- CRIANDO O BOTÃO DE AVANÇAR O CAROUSEL   -->
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <!-- CRIANDO OS INDICADORES DO SLIDE -->
+            <div class="carousel-indicators">
+                <!-- data-bs-slide-to="0": atributo para informar que este botão pertence ao slide 0 (os slides do bootstrap se comportam como se fosse arrays) 
+                    class="active": classe para indicar que este botão é o primeiro slide-->
+                <button type="button" class="active" data-bs-target="#carousel" data-bs-slide-to="0"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
+            </div>
+        </div>
+        <!-- CRIANDO A ÁREA TEXTUAL SOBRE O RESTAURANTE -->
+        <!-- class="pt-5 pb-5": aplicando um "padding-top; e um padding-bottom" -->
+        <div class="pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <!-- class="col-md-5": a div ocupara um espaço de 5 colunas -->
+                    <div class="col-md-5">
+                        <!-- class="d-block w-100": aplicando o "display: block; e o width: 100%;", a img do restaurante irá ocupar a largura total das 5 colunas 
+                            class="rounded": aplciando uma borda arredondada para a imagem-->
+                        <img src="images/restaurante.jpg" alt="Foto do espaço interno no restaurante" class="d-block w-100 rounded">
+                    </div>
+                    <!-- class="mt-3": aplicando um margin-top para telas pequenas (mt-3) 
+                        class="mt-md-0":  aplicando um margin-top: 0; para telas a partir do tamanho médio-->
+                    <div class="col-md-7 mt-3 mt-md-0">
+                        <h2 class="section-title">Sobre <span class="text-colored">o Pimentta</span></h2> <!-- colocamos o span para mudar a cor de uma parte do texto somente -->
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab ea laudantium, facilis corporis dolore nihil nobis sunt nulla aspernatur deserunt sapiente aliquam officiis tempore quas fugit, odit est molestiae veniam?
+                        </p>
+                        <h3 class="section-title">Sobre <span class="text-colored">a história</span></h3> <!-- colocamos o span para mudar a cor de uma parte do texto somente -->
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse fugiat sint suscipit eos repellat eius repudiandae eligendi a voluptates? Nobis ipsa assumenda aut inventore obcaecati cum perspiciatis vero asperiores architecto.
+                        </p>
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SEÇÃO DE EVENTOS DO RESTAURANTE -->
+    <!-- class="pt-5 pb-5": padding-top: ; e padding-bottom: ; -->
+    <section id="eventos" class="pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <!-- class="text-center": classe para centralizar o texto -->
+                <h2 class="section-title text-center">Para todas <span class="text-colored">as ocasiões</span></h2>
+            </div>
+            <!-- class="mt-4": margin-top: ; para as imagens ficarem mais afastadas do titulo-->
+            <div class="row mt-4">
+                <!-- class="col-md-4": aqui ocupamos 4 colunas pois teremos 3 abas de eventos (bootstrap trabalha com 12 colunas por linha) -->
+                <div class="col-md-4">
+                    <!-- class="d-block w-100 rounded": imagem uma embaixo da outra -> display: block; || width: 100%; || borda arredondada (rounded) -->
+                    <img src="images/eventos/aniversario.jpg" alt="" class="d-block w-100 rounded mb-2">
+                    <h3 class="section-title text-colored fs-4"> <!-- class="fs-4": aletrando o tamanho da fonte (font-size: ;)-->
+                        <i class="bi bi-calendar-heart-fill"></i> <!-- Add um icone de calendario com coração -->
+                        Aniversários</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem odit facilis, dignissimos inventore placeat sunt odio earum aperiam facere temporibus reiciendis! Suscipit fugiat ratione veniam atque dolor! Id, non distinctio?
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <!-- class="d-block w-100 rounded": imagem uma embaixo da outra -> display: block; || width: 100%; || borda arredondada (rounded) -->
+                    <img src="images/eventos/casamento.jpg" alt="" class="d-block w-100 rounded mb-2">
+                    <h3 class="section-title text-colored fs-4"> <!-- class="fs-4": aletrando o tamanho da fonte (font-size: ;)-->
+                        <i class="bi bi-arrow-through-heart-fill"></i> <!-- Add um icone de um coração com flecha -->
+                        Recepção para casamentos</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem odit facilis, dignissimos inventore placeat sunt odio earum aperiam facere temporibus reiciendis! Suscipit fugiat ratione veniam atque dolor! Id, non distinctio?
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <!-- class="d-block w-100 rounded mb-2": imagem uma embaixo da outra -> display: block; || width: 100%; || borda arredondada (rounded)
+                        class="mb-2": margin-bottom: ; -->
+                    <img src="images/eventos/confraternizacoes.jpg" alt="" class="d-block w-100 rounded mb-2">
+                    <h3 class="section-title text-colored fs-4"> <!-- class="fs-4": aletrando o tamanho da fonte (font-size: ;)-->
+                        <i class="bi bi-people-fill"></i> <!-- Add icone de duas pessoas -->
+                        Confraternização</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem odit facilis, dignissimos inventore placeat sunt odio earum aperiam facere temporibus reiciendis! Suscipit fugiat ratione veniam atque dolor! Id, non distinctio?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SEÇÃO DO CARDÁPIO DO RESTAURANTE -->
+    <!-- class="pt-5 pb-5": adicionando um padding top e um padding bottom ao cardápio do restaurante -->
+    <section id="cardapio" class="pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <!-- class="section-title text-center": colocando a fonte e deslocando o titulo para o meio da página -->
+                <h2 class="section-title text-center mb-4">
+                    Nosso <span class="text-colored">cardápio</span>
+                </h2>
+            </div>
+            <div class="row"> <!-- Linha -->
+                <!-- class="col-md-2": ocupando o espaço de duas colunas -->
+                <aside class="col-md-2"> <!-- tag "aside" para barra lateral -->
+                    <!-- class="nav nav-pills: deixando as opções dentro do nav tenham uma aparencia de botão 
+                    class="nav nav-pills flex-column": mudando a direção do flex-box.Por padrao o "nav-pills" deixa os itens um ao lado do outro, e o que queremos é que eles fiquem um a baixo do outro (flex-column)-->
+                    <nav class="nav nav-pills flex-column nav-cardapio">
+                        <!-- class="fw-bold: colocando os botões em negrito -> font-weight: bold; 
+                            class="text-start": start seria a esquerda no bootstrap, então os botões irão se deslocar para a esquerda
+                            data-bs-toggle="tab" || data-bs-target="#bebidas-sem-alcool": atributos para conseguirmos navegar entre os campos do cardapio-->
+                        <button data-bs-toggle="tab" data-bs-target="#segunda" type="button" class="fw-bold text-start nav-link text-colored active">
+                            Segunda-feira
+                        </button>
+                        <button data-bs-toggle="tab" data-bs-target="#terca" type="button" class="fw-bold text-start nav-link text-colored">
+                            Terça-feira
+                        </button>
+                        <button data-bs-toggle="tab" data-bs-target="#quarta" type="button" class="fw-bold text-start nav-link text-colored">
+                            Quarta-feira
+                        </button>
+                        <button data-bs-toggle="tab" data-bs-target="#quinta" type="button" class="fw-bold text-start nav-link text-colored">
+                            Quinta-feira
+                        </button>
+                        <button data-bs-toggle="tab" data-bs-target="#sexta" type="button" class="fw-bold text-start nav-link text-colored">
+                            Sexta-feira
+                        </button>
+                    </nav>
+                </aside>
+                <!-- class="col-md-10": ocupando o espaço das 10 colunas que sobraram -->
+                <div class="col-md-10">
+                    <!-- class="tab-content": alterando o conteudo da aba apos clicar no botão -->
+                    <div class="tab-content">
+                        <!-- class="tab-pane active": Conteudo das abas será criado aqui dentro -->
+                        <div class="tab-pane active" id="segunda">
+                            <div class="row"> <!-- linhas -->
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/pizza.jpg" alt="Pizza">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Pizza</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/salmao.jpg" alt="Salmão">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Salmão</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/pizza.jpg" alt="Pizza">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Pizza</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/salmao.jpg" alt="Salmão">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Salmão</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/pizza.jpg" alt="Pizza">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Pizza</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/salmao.jpg" alt="Salmão">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Salmão</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="terca">
+                            <div class="row"> <!-- linhas -->
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/pizza.jpg" alt="Pizza">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Pizza</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/salmao.jpg" alt="Salmão">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Salmão</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/pizza.jpg" alt="Pizza">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Pizza</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/salmao.jpg" alt="Salmão">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Salmão</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/pizza.jpg" alt="Pizza">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Pizza</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/salmao.jpg" alt="Salmão">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Salmão</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="quarta">
+                            <div class="row"> <!-- linhas -->
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/sobremesas/bolo.jpg" alt="Bolo">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Bolo</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/sobremesas/cupcake.jpg" alt="Cupcake">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Cupcake</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/sobremesas/bolo.jpg" alt="Bolo">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Bolo</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/sobremesas/cupcake.jpg" alt="Cupcake">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Cupcake</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/sobremesas/bolo.jpg" alt="Bolo">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Bolo</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="quinta">
+                            <div class="row"> <!-- linhas -->
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/pizza.jpg" alt="Pizza">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Pizza</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/salmao.jpg" alt="Salmão">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Salmão</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/pizza.jpg" alt="Pizza">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Pizza</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/salmao.jpg" alt="Salmão">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Salmão</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/pizza.jpg" alt="Pizza">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Pizza</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/pratos/salmao.jpg" alt="Salmão">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Salmão</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="sexta">
+                            <div class="row"> <!-- linhas -->
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/sobremesas/bolo.jpg" alt="Bolo">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Bolo</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/sobremesas/cupcake.jpg" alt="Cupcake">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Cupcake</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/sobremesas/bolo.jpg" alt="Bolo">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Bolo</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/sobremesas/cupcake.jpg" alt="Cupcake">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Cupcake</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                                <div class="col-md-3"> <!-- Ocupará 3 colunas, e fciará 4 itens por linha -->
+                                    <!-- class="d-block w-100": impredindo que a imagem estrapole a limitação da coluna (display: block;) e (width: 100%;) -->
+                                    <img class="d-block w-100" src="images/cardapio/sobremesas/bolo.jpg" alt="Bolo">
+                                    <!-- class="fw-bold mt-2": deixando a fonte em negrito (font-weight: bold;) || aplicando uma margem no topo do "h5" (margin-top: ;)  -->
+                                    <h5 class="text-colored fw-bold mt-2">Bolo</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum officiis nam pariatur in, aperiam dignissimos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SEÇÃO DE CONTATOS DO RESTAURANTE -->
+    <section id="fale-conosco" class="pt-5 pb-5"> <!-- class="pt-5 pb-5": adicionando um padding top e um padding bottom a seção de contatos -->
+        <div class="container">
+            <div class="row">
+                <h2 class="section-title text-center">Fale <span class="text-colored">conosco</span></h2>
+            </div>
+            <div class="row">
+                <!-- class="col-md-7": ocupara 7 espaços de colunas -->
+                <div class="col-md-7 mb-5">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-colored" for="nome">Seu nome</label>
+                            <input type="text" id="nome" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-colored" for="email">Seu e-mail</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-colored" for="telefone">Seu telefone</label>
+                            <input type="tel" id="telefone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-colored" for="mensagem">Sua mensagem</label>
+                            <textarea  id="mensagem" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn fw-bold">
+                            Enviar
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-5"> <!-- Sobraram 5 colunas, então usamos elas para fazer o campo das redes sociais e endereço-->
+                    <div class="row">
+                        <!-- class="fs-4": dominuindo a fonte do h3 (font-size: ;)-->
+                        <h3 class="section-title fs-4 text-colored">
+                            <i class="bi bi-hand-thumbs-up-fill"></i> <!-- Add um joinha no campo de rede socias -->
+                            Redes sociais
+                        </h3>
+                        <ul class="social-links">
+                            <li class="fs-5"> <!-- class="fs-4": mudando o font-size dos itens (fs-4) -->
+                                <a href="https://www.facebook.com/PimenttaGourmet/" target="_blank">
+                                    <i class="bi bi-facebook text-colored"></i> <!-- add a tag do facebook ao campo de redes sociais -->
+                                </a>
+                            </li>
+                            <!-- class="ms-1 me-1": aplicando margin-left: ; (ms-1) || aplicando margin-right: ; (me-1) -->
+                            <li class="fs-5 ms-1 me-1">
+                                <a href="https://www.instagram.com/pimentta_gourmet/" target="_blank">
+                                    <i class="bi bi-instagram text-colored"></i> <!-- add a tag do instagram ao campo de redes sociais -->
+                                </a>
+                            </li>
+                            <li class="fs-5">
+                                <a href="#" target="_blank">
+                                    <i class="bi bi-whatsapp text-colored"></i> <!-- add a tag do whatsapp ao campo de redes sociais -->
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- class="mt-4": margin-top: ; para separar o campo de redes sociais do campo de endereço -->
+                    <div class="row mt-4">
+                        <h3 class="section-title fs-4 text-colored">
+                            <i class="bi bi-cursor-fill"></i> <!-- add um icone de aviaozinho no endereço -->
+                            Endereço
+                        </h3>
+                        <p>
+                            R. Prof. Max Humpl, 2123 - Salto Norte, Blumenau - SC, 89065-510
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <footer>
+        <div class="direitos-reservados container">
+            <p>
+                &copy; Pimentta Gourmet - Todos os direitos reservados - 2023
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> <!-- Importando o JavaScript bootstrap -->
+</body>
+</html>
